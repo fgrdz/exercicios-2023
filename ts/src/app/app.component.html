@@ -1,78 +1,175 @@
-<div class="toolbar" role="banner">
-  <img src="data:image/png;base64,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" alt="" />
-  <span>O ciclo d'água é uma dança eterna - Jaloo, chuva</span>
-  <div class="spacer"></div>
-</div>
-
 <div class="content" role="main">
-
+  <!--BARRA FIXA MENU LATERAL-->
   <div id="required-elements">
-    <div class="container-resumo">
-      <h2>Análise sensorial de preparações funcionais desenvolvidas para escolares entre 09 e 15 anos, do município de Campinas/SP</h2>
-  
-      <h3>Resumo</h3>
-      <p *ngIf="mostrarResumoVisivel" class="resumo resumo-visivel">
-        Resumo: Durante a idade escolar, a alimentação e a oferta de uma nutrição adequada são fundamentais para a manutenção do desenvolvimento das crianças. Por conta disso, o Programa Nacional de Alimentação Escolar (PNAE) evidencia-se como uma política governamental nacional para assegurar uma alimentação adequada aos estudantes do ensino público. 
-        A inclusão de preparações funcionais, no contexto da alimentação escolar, pode agregar valor nutricional e reduzir riscos de futuras doenças. Dessa forma, o presente trabalho tem como objetivo avaliar a aceitabilidade de preparações funcionais... (+)
-      </p>
-      <p *ngIf="!mostrarResumoVisivel" class="resumo resumo-oculto">
-        Resumo: Durante a idade escolar, a alimentação e a oferta de uma nutrição adequada são fundamentais para a manutenção do desenvolvimento das crianças. Por conta disso, o Programa Nacional de Alimentação Escolar (PNAE) evidencia-se como uma política governamental nacional para assegurar uma alimentação adequada aos estudantes do ensino público. 
-        A inclusão de preparações funcionais, no contexto da alimentação escolar, pode agregar valor nutricional e reduzir riscos de futuras doenças. Dessa forma, o presente trabalho tem como objetivo avaliar a aceitabilidade de preparações funcionais desenvolvidas para escolares, certificando a sua possibilidade de inserção nos cardápios, cooperando com o PNAE. As preparações foram elaboradas a partir de receitas previamente aceitas e distribuídas aos escolares, acrescidas de ingredientes funcionais para potencializar sua capacidade nutricional. 
-        Com isso, foram preparadas no "Departamento de Alimentação Escolar do CEASA/Campinas", sendo elas: bolo de laranja com biomassa de banana verde, creme de abacate com cacau 32%, gelatina com suco de uva integral e salada de fruta com yacon. Determinou-se a composição centesimal de cada preparação funcional, assim como, os compostos fenólicos totais e a capacidade antioxidante em comparação com as versões convencionais. Utilizou-se o método de Folin-Ciocalteau para a determinação de compostos fenólicos totais e a capacidade antioxidante a partir do ABTS, FRAP e DPPH. De acordo com as comparações, a gelatina e o creme de abacate apresentaram diferenças significativas entre a preparação funcional e a convencional. 
-        Sendo o creme de abacate com cacau 32% com maior teor de compostos fenólicos e atividade antioxidante. Também avaliou-se a segurança microbiológica, na qual todas as preparações demonstraram-se adequadas às normas da RDC nº12. E, a capacidade prebiótica da yacon e da biomassa de banana verde utilizadas. Para isso, observou-se o crescimento de B. animalis BB12 e L. acidophilus LA5 em meio MRS, o qual substituiu-se a fonte de açúcar pela yacon e biomassa de banana verde. Com isso, em ambas as fontes houve crescimento de probióticos, expressando o potencial prebiótico. Para a análise sensorial utilizou-se o método Resto Ingestão e Escala Hedônica, resultando em duas preparações funcionais aceitas. Os alimentos avaliados apresentam propriedades funcionais, entretanto, a aceitação dos escolares demanda uma educação alimentar e nutricional combinada com a introdução de novos alimentos, a fim de encorajar a criação de novos hábitos alimentares.
-      </p>
-
-      <a (click)="toggleResumo()" class="btn-show-more">
-        {{ mostrarResumoVisivel ? 'ver mais' : 'Ver menos' }} 
-        
-      </a>
-  
-      <div class="container-form">
-          <h3 class="title-topicos">Tópicos Relevantes</h3> 
-          <p>Deseja compartilhar algum tópico conosco?</p>
-          <!-- Botão criar tópico -->
-          <a class="btn-create-topic" (click)="toggleFormulario()">criar tópico</a>
-          
-          <form class="formulario" *ngIf="mostrarFormulario" (ngSubmit)="onSubmitForm($event)">
-            <label for="topico">Assunto:</label>
-            <input  [(ngModel)]="assunto" required maxlength="100" class="subject" placeholder="Defina um tópico sucinto para notificar os autores..." name="assunto" id="assunto">
-          
-            <label for="conteudo">Conteúdo:</label>
-            <textarea  [(ngModel)]="conteudo" required maxlength="200" placeholder="Digite o conteúdo" name="conteudo" id="conteudo" ></textarea>
-          
-            <button (click)="toggleMensagem()"  type="submit">Enviar</button>
-          
-          </form>
-          <p *ngIf="mostrarMensagem" class="feedback">Aguardando feedback dos autores</p>  
-      </div>
-      
-     
-     
-      <div class="cards-respondido" >
-        <div (click)="toggleComentario()"  class="answered-topic" >
-          <h4   class="ops-topic-subject">Topico Respondido</h4>
-          <p>Exemplo de conteúdo de um tópico respondido</p>
-          <i class="{{ iconName }}"></i>
-          <div class="comments-container" *ngIf="mostrarComentarios">
-            <p>
-              COMENTARIO EXEMPLO
-            </p>
-          </div>
-        </div>
-      </div>
-     
+    <div class="cabecalho-elementos">
 
     </div>
+    <div class="corpo">
+    <!--CABEÇALHO-->
+        <aside class="aside">
+          <h3>SLACA 2019</h3>
+          <img src="./assets/dewey 4.png" alt="Logo do Evento"/>
+          <div class="aside-menu">
+            <p>Apresentação</p>
+            <p>Comitês</p>
+            <p>Autores</p>
+            <p>Trabalhos</p>
+            <p>Contato</p>
+          </div>
 
-    
+        </aside>
+        <header class="header">
+          <div class="header-titulo">
+            <p>Anais do Simpósio Latino Americano de Ciências de Alimentos</p>
+            <h3>Anais do Simpósio Latino Americano de Ciências de Alimentos</h3>
+            <p>ISSN: 1234-5678</p>
+          </div>
+
+          <button><img src="./assets/language image.png"/>PT,BR</button>
+          <div class="header-perfil">
+            <img src="" alt="Foto do perfil"/>
+            <p>Bem vindo!</p>
+            <p>example@email.com</p>
+          </div>
+        </header>
+        <div class="titulo-detalhes">
+          <div class="trabalho-titulo">
+            <h2>Análise sensorial de preparações funcionais desenvolvidas para escolares entre 09 e 15 anos, do município de Campinas/SP</h2>
+            <button class="download">Download</button>
+            <button class="fav">Fav</button>
+            <button class="doi"><img src="./assets/doi.png" alt=""></button>
+          </div>
+        <!--DETALHES CONTAINER-->
+          <div class="detalhes">
+            <img src="./assets/dewey 1.svg" alt="Video apresentação "/>
+            <div class="detalhes-container">
+              <h3>Detalhes</h3>
+              <div class="texto-detalhes">
+                <p>Tipo de Apresentação: Pôster
+                Eixo temático: Alimentação e saúde (AS) 
+                Palavras-chaves: Alimentos funcionais, alimentação escolar.
+                </p>
+                <p>Autores:
+                Galileo Galilei¹
+                Berta Lange de Morretes²
+                Isaac Newton³
+                Cesar Lattes¹
+                Stephen Hawking⁴
+                </p>
+                <p>
+                 ¹Universidade Estadual de Campinas
+                ²Universidade de São Paulo
+                ³Instituto Nacional de Pesquisas Espaciais
+                ⁴Universidade Federal do Rio de Janeiro
+              </p>
+              <p>
+                 ¹Universidade Estadual de Campinas
+                ²Universidade de São Paulo
+                ³Instituto Nacional de Pesquisas Espaciais
+                ⁴Universidade Federal do Rio de Janeiro
+              </p>
+              <p>Autores:
+                Galileo Galilei¹
+                Berta Lange de Morretes²
+                Isaac Newton³
+                Cesar Lattes¹
+                Stephen Hawking⁴
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+       
+      
+        <!--RESUMO-->
+      <div class="container-resumo">
+        <h3>Resumo</h3>
+            <p *ngIf="mostrarResumoVisivel" class="resumo resumo-visivel">
+              Resumo: Durante a idade escolar, a alimentação e a oferta de uma nutrição adequada são fundamentais para a manutenção do desenvolvimento das crianças. Por conta disso, o Programa Nacional de Alimentação Escolar (PNAE) evidencia-se como uma política governamental nacional para assegurar uma alimentação adequada aos estudantes do ensino público. 
+              A inclusão de preparações funcionais, no contexto da alimentação escolar, pode agregar valor nutricional e reduzir riscos de futuras doenças. Dessa forma, o presente trabalho tem como objetivo avaliar a aceitabilidade de preparações funcionais...
+            </p>
+            <p *ngIf="!mostrarResumoVisivel" class="resumo resumo-oculto">
+              Resumo: Durante a idade escolar, a alimentação e a oferta de uma nutrição adequada são fundamentais para a manutenção do desenvolvimento das crianças. Por conta disso, o Programa Nacional de Alimentação Escolar (PNAE) evidencia-se como uma política governamental nacional para assegurar uma alimentação adequada aos estudantes do ensino público. 
+              A inclusão de preparações funcionais, no contexto da alimentação escolar, pode agregar valor nutricional e reduzir riscos de futuras doenças. Dessa forma, o presente trabalho tem como objetivo avaliar a aceitabilidade de preparações funcionais desenvolvidas para escolares, certificando a sua possibilidade de inserção nos cardápios, cooperando com o PNAE. As preparações foram elaboradas a partir de receitas previamente aceitas e distribuídas aos escolares, acrescidas de ingredientes funcionais para potencializar sua capacidade nutricional. 
+              Com isso, foram preparadas no "Departamento de Alimentação Escolar do CEASA/Campinas", sendo elas: bolo de laranja com biomassa de banana verde, creme de abacate com cacau 32%, gelatina com suco de uva integral e salada de fruta com yacon. Determinou-se a composição centesimal de cada preparação funcional, assim como, os compostos fenólicos totais e a capacidade antioxidante em comparação com as versões convencionais. Utilizou-se o método de Folin-Ciocalteau para a determinação de compostos fenólicos totais e a capacidade antioxidante a partir do ABTS, FRAP e DPPH. De acordo com as comparações, a gelatina e o creme de abacate apresentaram diferenças significativas entre a preparação funcional e a convencional. 
+              Sendo o creme de abacate com cacau 32% com maior teor de compostos fenólicos e atividade antioxidante. Também avaliou-se a segurança microbiológica, na qual todas as preparações demonstraram-se adequadas às normas da RDC nº12. E, a capacidade prebiótica da yacon e da biomassa de banana verde utilizadas. Para isso, observou-se o crescimento de B. animalis BB12 e L. acidophilus LA5 em meio MRS, o qual substituiu-se a fonte de açúcar pela yacon e biomassa de banana verde. Com isso, em ambas as fontes houve crescimento de probióticos, expressando o potencial prebiótico. Para a análise sensorial utilizou-se o método Resto Ingestão e Escala Hedônica, resultando em duas preparações funcionais aceitas. Os alimentos avaliados apresentam propriedades funcionais, entretanto, a aceitação dos escolares demanda uma educação alimentar e nutricional combinada com a introdução de novos alimentos, a fim de encorajar a criação de novos hábitos alimentares.
+            </p>
+  
+            <a (click)="toggleResumo()" class="btn-show-more">
+              ver mais  
+            </a>
+      </div>
+      <!--DISCUSSOES-->
+        <div class="container-discussoes">
+          <h3 class="title-topicos">Discussões</h3> 
+          <!--container do formulario-->
+          <div class="container-form">
+            
+            <h5>Compartihe suas ideias ou dúvidas com os autores!</h5>
+            
+            <div class="icons">
+              <img class="img-icons" src="./assets/icone1.png" alt="">
+              <img class="img-icons" src="./assets/icone2.png" alt="">
+              <img class="img-icons" src="./assets/icone3.png" alt="">
+            </div>
+            <p>Sabia que o maior estímulo ao desenvolvimento cientifico e cultural é a curiosidade?</p>
+            <!-- Botão criar tópico -->
+            <div class="divisoria"></div>
+            <a class="btn-create-topic" (click)="toggleFormulario()">criar tópico</a>
+            <!--FOrmulario-->
+            <form class="formulario" *ngIf="mostrarFormulario" (ngSubmit)="onSubmitForm($event)">
+              <label for="topico">Assunto:</label>
+              <input  [(ngModel)]="assunto" required maxlength="100" class="subject" placeholder="Defina um tópico sucinto para notificar os autores..." name="assunto" id="assunto">
+            
+              <label for="conteudo">Conteúdo:</label>
+              <input  [(ngModel)]="conteudo" required placeholder="" name="conteudo" id="conteudo" />
+              <div class="botao-enviar">
+                <button class="btn-enviar" (click)="toggleMensagem()"  type="submit">Enviar</button>
+              </div>
+              
+              
+            
+            </form>
+            <!--Mensagem submit-->
+            <p *ngIf="mostrarMensagem" class="feedback">Aguardando feedback dos autores</p>  
+          </div>
+           <!--CARTOES RESPONDIDOS QUE EXPANDEM-->
+              <div class="cards-respondido" >
+                <div (click)="toggleComentario()"  class="answered-topic" >
+                  <h4   class="ops-topic-subject">Assunto da pergunta aparece aqui</h4>
+        
+                  <p>Exemplo de conteúdo de conteúdo aparece aqui</p>
+                  <i class="{{ iconName }}"></i><span>1 Resposta</span>
+                  <div class="comments-container" *ngIf="mostrarComentarios">
+                    <div class="head-comments">
+                        <p>Julio </p>
+                        <h6>
+                          Autor
+                        </h6>
+                    </div>
+
+                    <p>Resposta do autor é aqui. Relato inscreve-se no campo da análise da dimensão e impacto de processo formativo situado impacto de processo formativo processo resente relato inscreve-se no campo da análise da dimensão e impacto de processo formativo situado impacto de processo formativo processo.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="cards-respondido" >
+                <div  >
+                  <h4   >Assunto da pergunta aparece aqui</h4>
+        
+                  <p>Exemplo de conteúdo de conteúdo aparece aqui</p>
+                  <i class="{{ iconName }}"></i><span>1 Resposta</span>
+
+                </div>
+              </div>
+        </div>
+        
+
+
+        <div class="footer">
+          <img src="./assets/imagem - footer.png">
+        </div>
+    </div>
     
 
   </div>
-
-  <svg id="clouds" xmlns="http://www.w3.org/2000/svg" width="2611.084" height="485.677" viewBox="0 0 2611.084 485.677">
-    <title>Gray Clouds Background</title>
-    <path id="Path_39" data-name="Path 39" d="M2379.709,863.793c10-93-77-171-168-149-52-114-225-105-264,15-75,3-140,59-152,133-30,2.83-66.725,9.829-93.5,26.25-26.771-16.421-63.5-23.42-93.5-26.25-12-74-77-130-152-133-39-120-212-129-264-15-54.084-13.075-106.753,9.173-138.488,48.9-31.734-39.726-84.4-61.974-138.487-48.9-52-114-225-105-264,15a162.027,162.027,0,0,0-103.147,43.044c-30.633-45.365-87.1-72.091-145.206-58.044-52-114-225-105-264,15-75,3-140,59-152,133-53,5-127,23-130,83-2,42,35,72,70,86,49,20,106,18,157,5a165.625,165.625,0,0,0,120,0c47,94,178,113,251,33,61.112,8.015,113.854-5.72,150.492-29.764a165.62,165.62,0,0,0,110.861-3.236c47,94,178,113,251,33,31.385,4.116,60.563,2.495,86.487-3.311,25.924,5.806,55.1,7.427,86.488,3.311,73,80,204,61,251-33a165.625,165.625,0,0,0,120,0c51,13,108,15,157-5a147.188,147.188,0,0,0,33.5-18.694,147.217,147.217,0,0,0,33.5,18.694c49,20,106,18,157,5a165.625,165.625,0,0,0,120,0c47,94,178,113,251,33C2446.709,1093.793,2554.709,922.793,2379.709,863.793Z" transform="translate(142.69 -634.312)" fill="#eee"/>
-  </svg>
-
-</div>
 

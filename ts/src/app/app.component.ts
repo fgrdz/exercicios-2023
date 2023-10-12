@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
+import { ImageLoader } from '@angular/common';
+
+
 
 @Component({
   selector: 'app-root',
@@ -16,7 +19,7 @@ export class AppComponent {
   mostrarMensagem=  false;
   mostrarComentarios = false;
   iconName: string = 'fa-solid fa-comments';
- 
+  imagemSrc = '/ts/src/assets/dewey 1.svg'
 
   toggleResumo() {
     this.mostrarResumoVisivel = !this.mostrarResumoVisivel;
