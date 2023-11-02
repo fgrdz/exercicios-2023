@@ -97,17 +97,21 @@
             <p *ngIf="mostrarResumoVisivel" class="resumo resumo-visivel">
               Resumo: Durante a idade escolar, a alimentação e a oferta de uma nutrição adequada são fundamentais para a manutenção do desenvolvimento das crianças. Por conta disso, o Programa Nacional de Alimentação Escolar (PNAE) evidencia-se como uma política governamental nacional para assegurar uma alimentação adequada aos estudantes do ensino público. 
               A inclusão de preparações funcionais, no contexto da alimentação escolar, pode agregar valor nutricional e reduzir riscos de futuras doenças. Dessa forma, o presente trabalho tem como objetivo avaliar a aceitabilidade de preparações funcionais...
+              <a (click)="toggleResumo()" class="btn-show-more">
+                ver mais  
+              </a>
             </p>
             <p *ngIf="!mostrarResumoVisivel" class="resumo resumo-oculto">
               Resumo: Durante a idade escolar, a alimentação e a oferta de uma nutrição adequada são fundamentais para a manutenção do desenvolvimento das crianças. Por conta disso, o Programa Nacional de Alimentação Escolar (PNAE) evidencia-se como uma política governamental nacional para assegurar uma alimentação adequada aos estudantes do ensino público. 
               A inclusão de preparações funcionais, no contexto da alimentação escolar, pode agregar valor nutricional e reduzir riscos de futuras doenças. Dessa forma, o presente trabalho tem como objetivo avaliar a aceitabilidade de preparações funcionais desenvolvidas para escolares, certificando a sua possibilidade de inserção nos cardápios, cooperando com o PNAE. As preparações foram elaboradas a partir de receitas previamente aceitas e distribuídas aos escolares, acrescidas de ingredientes funcionais para potencializar sua capacidade nutricional. 
               Com isso, foram preparadas no "Departamento de Alimentação Escolar do CEASA/Campinas", sendo elas: bolo de laranja com biomassa de banana verde, creme de abacate com cacau 32%, gelatina com suco de uva integral e salada de fruta com yacon. Determinou-se a composição centesimal de cada preparação funcional, assim como, os compostos fenólicos totais e a capacidade antioxidante em comparação com as versões convencionais. Utilizou-se o método de Folin-Ciocalteau para a determinação de compostos fenólicos totais e a capacidade antioxidante a partir do ABTS, FRAP e DPPH. De acordo com as comparações, a gelatina e o creme de abacate apresentaram diferenças significativas entre a preparação funcional e a convencional. 
               Sendo o creme de abacate com cacau 32% com maior teor de compostos fenólicos e atividade antioxidante. Também avaliou-se a segurança microbiológica, na qual todas as preparações demonstraram-se adequadas às normas da RDC nº12. E, a capacidade prebiótica da yacon e da biomassa de banana verde utilizadas. Para isso, observou-se o crescimento de B. animalis BB12 e L. acidophilus LA5 em meio MRS, o qual substituiu-se a fonte de açúcar pela yacon e biomassa de banana verde. Com isso, em ambas as fontes houve crescimento de probióticos, expressando o potencial prebiótico. Para a análise sensorial utilizou-se o método Resto Ingestão e Escala Hedônica, resultando em duas preparações funcionais aceitas. Os alimentos avaliados apresentam propriedades funcionais, entretanto, a aceitação dos escolares demanda uma educação alimentar e nutricional combinada com a introdução de novos alimentos, a fim de encorajar a criação de novos hábitos alimentares.
+              <a (click)="toggleResumo()" class="btn-show-more">
+                ver mais  
+              </a>
             </p>
   
-            <a (click)="toggleResumo()" class="btn-show-more">
-              ver mais  
-            </a>
+
       </div>
       <!--DISCUSSOES-->
         <div class="container-discussoes">

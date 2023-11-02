@@ -186,8 +186,16 @@ svg#clouds {
   }
 }
 
+
+@media screen and (max-width: 575px) {
+  svg#rocket-smoke {
+    display: none;
+    visibility: hidden;
+  }
+}
+
 #required-elements {
-  
+
   display: flex;
 
   h2{
@@ -210,7 +218,7 @@ svg#clouds {
   }
 
   aside{
-    
+    position: fixed;
     padding: 10px;
     top: 0;
     left: 0;
@@ -230,7 +238,6 @@ svg#clouds {
     height: 68px;
     width: 220px;
     font-size: 38px;
- 
   }
 
   aside img{
@@ -267,15 +274,17 @@ svg#clouds {
     align-items: center;
     background-color: #f8dacb;  
     padding: 0 ;
+    box-sizing: border-box;
   }
   .header h3{
-    margin-left: 20px;
+    margin-left: 240px;
+
     font-size: 18px;
-    width: 580px ;
+    width: 70% ;
     justify-self: flex-start;
   }
   .header p{
-    margin-left: 20px;
+    margin-left: 240px;
     font-size: 12px;
   }
   .header button{
@@ -289,7 +298,7 @@ svg#clouds {
     border: none;
     padding: 5px;
     border-radius: 4px;
-  
+    
   }
   .header button img{
     width: 22px;
@@ -299,10 +308,10 @@ svg#clouds {
   .header-perfil{
     justify-self: flex-end;
     display: flex;
-    max-width: 160px ;
+    max-width: 30% ;
     max-height: 60px;
     margin-right: 20px;
-   
+   box-sizing: border-box;
   }
   .header-perfil p{
     font-size: 12px;
@@ -393,7 +402,7 @@ svg#clouds {
     font-weight: bold;
     color: #ED7839;
     cursor: pointer;
-    margin: 10px;
+    margin: 0px 10px 0 ;
   }
 
   .container-resumo{
@@ -414,9 +423,7 @@ svg#clouds {
   .container-resumo p{
     padding: 10px;
   }
-  .container-resumo a{
-    margin: 5px;
-  }
+
   .container-form{
     border: none;
     margin-top: 0;
