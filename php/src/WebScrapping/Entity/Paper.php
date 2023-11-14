@@ -6,39 +6,58 @@ namespace Chuva\Php\WebScrapping\Entity;
  * The Paper class represents the row of the parsed data.
  */
 class Paper {
+    /**
+     * Paper Id.
+     *
+     * @var int
+     */
+    public int $id;
 
-  /**
-   * Paper Id.
-   *
-   * @var int
-   */
-  public $id;
+    /**
+     * Paper Title.
+     *
+     * @var string
+     */
+    public string $title;
 
-  /**
-   * Paper Title.
-   *
-   * @var string
-   */
-  public $title;
+    /**
+     * The paper type (e.g. Poster, Nobel Prize, etc).
+     *
+     * @var string
+     */
+    public string $type;
 
-  /**
-   * The paper type (e.g. Poster, Nobel Prize, etc).
-   *
-   * @var string
-   */
-  public $type;
+    /**
+     * Paper authors.
+     *
+     * @var \Chuva\Php\WebScrapping\Entity\Person[]
+     */
+    public array $authors;
 
-  /**
-   * Paper authors.
-   *
-   * @var \Chuva\Php\WebScrapping\Entity\Person[]
-   */
-  public $authors;
-
-  /**
-   * Builder.
-   */
-  public function __construct($id, $title, $type, $authors = []) {
-  }
-
+    /**
+     * Builder.
+     */
+    public function __construct($id, $title, $type, $authors = []) {
+        $this->id = $id;
+        $this->title = $title;
+        $this->type = $type;
+        $this->authors = (array)$authors;
+    }
+    
+    public function toArray(): array {
+        $authorsArray = [];
+        foreach ($this->authors as $author) {
+            $authorsArray[] = [
+                'Name' => $author->name,
+                'Institution' => $author->institution,
+            ];
+        }
+    
+        return [
+            'ID' => $this->id,
+            'Title' => $this->title,
+            'Type' => $this->type,
+            'Authors' => $authorsArray,
+        ];
+    }
 }

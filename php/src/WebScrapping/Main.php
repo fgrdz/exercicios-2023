@@ -2,22 +2,57 @@
 
 namespace Chuva\Php\WebScrapping;
 
-/**
- * Runner for the Webscrapping exercice.
- */
+use OpenSpout\Common\Entity\Style\CellAlignment;
+use OpenSpout\Writer\Common\Creator\Style\StyleBuilder;
+use OpenSpout\Writer\Common\Creator\WriterEntityFactory;
+
+
 class Main {
 
-  /**
-   * Main runner, instantiates a Scrapper and runs.
-   */
+
   public static function run(): void {
-    $dom = new \DOMDocument('1.0', 'utf-8');
-    $dom->loadHTMLFile(__DIR__ . '/../../assets/origin.html');
+    $data = Scrapper::scrapFromHtmlFile(__DIR__ . '/../../assets/origin.html');
 
-    $data = (new Scrapper())->scrap($dom);
+    $csvPath = __DIR__ . '/../../assets/saida.csv';
 
-    // Write your logic to save the output file bellow.
-    print_r($data);
+    $writer = WriterEntityFactory::createCSVWriter();
+    $writer->openToFile($csvPath);
+
+    $headerStyle = (new StyleBuilder())
+      ->setFontName('Arial')
+      ->setFontSize(11)
+      ->setFontBold()
+      ->setCellAlignment(CellAlignment::RIGHT)
+      ->build();
+
+    $headers = ['ID', 'Title', 'Type'];
+    for ($i = 0; $i < 17; ++$i) {
+      $headers[] = "Author $i";
+      $headers[] = "Author $i Institution";
+    }
+    $headerRow = WriterEntityFactory::createRowFromArray($headers);
+    $headerRow->setStyle($headerStyle);
+    $writer->addRow($headerRow);
+
+    foreach ($data as $paper) {
+      $rowData = [$paper->id, $paper->title, $paper->type];
+
+      $authors = array_slice($paper->authors, 0, 17);
+      for ($i = 0; $i < 17; ++$i) {
+        if (isset($authors[$i])) {
+          $rowData[] = $authors[$i]->name;
+          $rowData[] = $authors[$i]->institution;
+        } else {
+          $rowData[] = '';
+          $rowData[] = '';
+        }
+      }
+
+      $row = WriterEntityFactory::createRowFromArray($rowData);
+      $writer->addRow($row);
+    }
+
+    $writer->close();
   }
 
 }
