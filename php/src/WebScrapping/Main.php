@@ -12,11 +12,10 @@ class Main {
 
   public static function run(): void {
     $data = Scrapper::scrapFromHtmlFile(__DIR__ . '/../../assets/origin.html');
-
-    $csvPath = __DIR__ . '/../../assets/saida.csv';
+    $cPath = __DIR__ . '/../../assets/saida.csv';
 
     $writer = WriterEntityFactory::createCSVWriter();
-    $writer->openToFile($csvPath);
+    $writer->openToFile($cPath);
 
     $headerStyle = (new StyleBuilder())
       ->setFontName('Arial')
@@ -35,20 +34,20 @@ class Main {
     $writer->addRow($headerRow);
 
     foreach ($data as $paper) {
-      $rowData = [$paper->id, $paper->title, $paper->type];
+      $rowDt = [$paper->id, $paper->title, $paper->type];
 
       $authors = array_slice($paper->authors, 0, 17);
       for ($i = 0; $i < 17; ++$i) {
         if (isset($authors[$i])) {
-          $rowData[] = $authors[$i]->name;
-          $rowData[] = $authors[$i]->institution;
+          $rowDt[] = $authors[$i]->name;
+          $rowDt[] = $authors[$i]->institution;
         } else {
-          $rowData[] = '';
-          $rowData[] = '';
+          $rowDt[] = '';
+          $rowDt[] = '';
         }
       }
 
-      $row = WriterEntityFactory::createRowFromArray($rowData);
+      $row = WriterEntityFactory::createRowFromArray($rowDt);
       $writer->addRow($row);
     }
 

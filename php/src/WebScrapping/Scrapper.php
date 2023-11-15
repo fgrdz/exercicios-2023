@@ -16,20 +16,20 @@ class Scrapper {
 
     public static function scrap(\DOMDocument $dom): array {
         $xPath = new \DOMXPath($dom);
-        $containerArticles = $xPath->query("//a[@class='paper-card p-lg bd-gradient-left']");
-        $results = [];
+        $container = $xPath->query("//a[@class='paper-card p-lg bd-gradient-left']");
 
-        foreach ($containerArticles as $article) {
-            $id = $xPath->query(".//div[@class='tags flex-row mr-sm']/div[@class='volume-info']", $article)->item(0)->nodeValue;
-            $title = $xPath->query(".//h4[@class='my-xs paper-title']", $article)->item(0)->nodeValue;
-            $tags = $xPath->query(".//div[@class='tags mr-sm']", $article)->item(0)->nodeValue;
+        $out = [];
+
+        foreach ($container as $article) {
+            $id = self::getNodeValue($xPath, $article, ".//div[@class='tags flex-row mr-sm']/div[@class='volume-info']");
+            $title = self::getNodeValue($xPath, $article, ".//h4[@class='my-xs paper-title']");
+            $tags = self::getNodeValue($xPath, $article, ".//div[@class='tags mr-sm']");
             $authors = self::authors($xPath->query(".//div[@class='authors']/span[@title]", $article));
-
             $paper = new Paper($id, $title, $tags, $authors);
-            $results[] = $paper;
+            $out[] = $paper;
         }
 
-        return $results;
+        return $out;
     }
 
     private static function authors(\DOMNodeList $nodes): array {
@@ -43,5 +43,11 @@ class Scrapper {
         }
 
         return $authors;
+    }
+
+    private static function getNodeValue(\DOMXPath $xPath, \DOMNode $contextNode, string $query): string {
+        $node = $xPath->query($query, $contextNode)->item(0);
+
+        return $node ? $node->nodeValue : '';
     }
 }
